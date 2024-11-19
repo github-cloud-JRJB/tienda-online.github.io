@@ -1,13 +1,92 @@
-<div>
-  <h1>Tienda Online</h1>
-  <div class="producto">
-    <h2>Producto 1</h2>
-    <p>Descripción breve del producto.</p>
-    <p>Precio: $100</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos Infantiles</title>
+  <style>
+    /* Estilo del menú */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      background-color: #f4a261;
+      padding: 10px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 5px;
+      background-color: #264653;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #2a9d8f;
+    }
+
+    .content {
+      padding: 20px;
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú de navegación -->
+  <nav class="menu">
+    <a href="#inflables" onclick="showTab('inflables')">Renta de Inflables</a>
+    <a href="#decoracion" onclick="showTab('decoracion')">Decoración Temática</a>
+    <a href="#shows" onclick="showTab('shows')">Shows Infantiles</a>
+    <a href="#comida" onclick="showTab('comida')">Comida para Eventos</a>
+    <a href="#paquetes" onclick="showTab('paquetes')">Paquetes Completos</a>
+  </nav>
+
+  <!-- Contenido de las pestañas -->
+  <div id="inflables" class="content active">
+    <h2>Renta de Inflables</h2>
+    <p>Ofrecemos una amplia variedad de inflables para todas las edades, desde castillos hasta toboganes acuáticos.</p>
   </div>
-  <div class="producto">
-    <h2>Producto 2</h2>
-    <p>Descripción breve del producto.</p>
-    <p>Precio: $200</p>
+
+  <div id="decoracion" class="content">
+    <h2>Decoración Temática</h2>
+    <p>Decoración personalizada para cualquier temática: princesas, superhéroes, animales y más.</p>
   </div>
-</div>
+
+  <div id="shows" class="content">
+    <h2>Shows Infantiles</h2>
+    <p>Contrata a payasos, magos y personajes para hacer que tu evento sea inolvidable.</p>
+  </div>
+
+  <div id="comida" class="content">
+    <h2>Comida para Eventos</h2>
+    <p>Palomitas, algodones de azúcar, hot dogs y más, ¡perfectos para tus fiestas!</p>
+  </div>
+
+  <div id="paquetes" class="content">
+    <h2>Paquetes Completos</h2>
+    <p>Todo lo que necesitas para tu evento en un solo lugar. Consulta nuestras opciones.</p>
+  </div>
+
+  <script>
+    // Función para mostrar las pestañas
+    function showTab(tabId) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
